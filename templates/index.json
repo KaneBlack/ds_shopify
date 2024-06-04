@@ -62,15 +62,6 @@
             "y_pos": 67
           }
         },
-        "repeatable_WKdcbt": {
-          "type": "repeatable",
-          "settings": {
-            "title": "",
-            "description": "",
-            "x_pos": 35,
-            "y_pos": 67
-          }
-        },
         "repeatable_438cwC": {
           "type": "repeatable",
           "settings": {
@@ -80,13 +71,23 @@
             "x_pos": 35,
             "y_pos": 67
           }
+        },
+        "repeatable_WKdcbt": {
+          "type": "repeatable",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/testimg1.webp",
+            "title": "Marula oil",
+            "description": "<p>Feugiat in fermentum posuere urna nec tincidunt.<\/p>",
+            "x_pos": 35,
+            "y_pos": 67
+          }
         }
       },
       "block_order": [
         "repeatable_hfxWNH",
         "repeatable_ep4ePz",
-        "repeatable_WKdcbt",
-        "repeatable_438cwC"
+        "repeatable_438cwC",
+        "repeatable_WKdcbt"
       ],
       "settings": {
         "heading": "no bullshit inside",
