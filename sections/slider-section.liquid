@@ -1,0 +1,220 @@
+{{ 'component-slider-section.css' | asset_url | stylesheet_tag }}
+
+{% assign settings = section.settings %}
+{% assign heading = settings.heading %}
+
+{% assign img_pos = settings.img_pos %}
+
+{% assign heading_color = settings.heading_color %}
+{% assign text_color = settings.text_color %}
+{% assign bg_color = settings.bg_color %}
+{% assign empty_color = "rgba(0,0,0,0)" %}
+
+
+<section class="slider-section">
+    {% if heading %}
+        <h2 class="slider-heading">{{ heading }}</h2>
+    {% endif %}
+    
+    <div class="slider-container">
+        <div class="slider-content">
+            <ul class="content-list">
+                {% for block in section.blocks %}
+                    {% assign title = block.settings.title %}
+                    {% assign image = block.settings.image %}
+                    {% assign description = block.settings.description %}
+
+                    {% assign x_pos = block.settings.x_pos %}
+                    {% assign y_pos = block.settings.y_pos %}
+
+                    <li class="content-item {% if forloop.first %} active {% endif %}">
+                        <figure>
+                            {% if image %}
+                                <img src={{ image | img_url: "master" }}  class="slider-img" alt={{ title }}>
+                            {% endif %}
+                            {% if description %}
+                                <figcaption class="content-description" style="left: {{x_pos}}%; top: {{y_pos}}%">{{ description }}</figcaption>
+                            {% endif %}
+                        </figure>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="slider-navigation">
+                <div class="nav-button prev">
+                    <svg fill="none" height="28" viewBox="0 0 28 28" width="28" xmlns="http://www.w3.org/2000/svg">
+                        <g stroke="#fff" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m5.83331 14h16.33329"/>
+                            <path d="m14 5.83334 8.1667 8.16666-8.1667 8.1667"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="nav-button next">
+                    <svg fill="none" height="28" viewBox="0 0 28 28" width="28" xmlns="http://www.w3.org/2000/svg">
+                        <g stroke="#fff" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m5.83331 14h16.33329"/>
+                            <path d="m14 5.83334 8.1667 8.16666-8.1667 8.1667"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="slider-titles">
+            <ul class="title-list">
+                {% for block in section.blocks %}
+                    {% assign title = block.settings.title %}
+
+                    {% if title %}
+                        <li class="title-item {% if forloop.first %} active {% endif %}">
+                            <button class="title-button">{{ title }}</button>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+  
+<style>
+  {% if img_pos == "1" %}
+    .slider-content {
+      order: {{ img_pos }}
+    }
+  {% endif %}
+  {% if heading_color != blank and heading_color != empty_color %}
+    /* Heading color */
+
+    .slider-heading {
+      color: {{ heading_color }};
+    }
+  {% endif %}
+
+  {% if text_color != blank and text_color != empty_color %}
+    /* Text color */
+
+    .slider-content figcaption {
+      color: {{ text_color }};
+    }
+    .slider-content figcaption:after {
+      content: "";
+      background: {{ text_color }};
+    }
+    .title-button {
+      color: {{ text_color }};
+    }
+  {% endif %}
+
+  {% if bg_color != blank and bg_color != empty_color %}
+    /* Background color */
+
+    .slider-titles {
+      background: {{ bg_color }};
+    }
+  {% endif %}
+</style>
+
+{{ 'slider-section.js' | asset_url | script_tag }}
+
+{% schema %}
+    {
+      "name": "t:sections.slider-section.name",
+      "tag": "section",
+      "class": "section",
+      "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading"
+    },
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "select",
+      "id": "img_pos",
+      "options": [
+        {
+          "value": "0",
+          "label": "Image Left"
+        },
+        {
+          "value": "1",
+          "label": "Image Right"
+        }
+      ],
+      "default": "0",
+      "label": "Image Block Position"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Titles Background Color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "repeatable",
+      "name": "Slider Blocks",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Description position"
+        },
+        {
+          "type": "range",
+          "id": "x_pos",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "%",
+          "label": "Horisontal position",
+          "default": 35
+        },
+        {
+          "type": "range",
+          "id": "y_pos",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Vertical position",
+          "default": 67
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.slider-section.name"
+    }
+  ]
+    }
+{% endschema %}
+    
