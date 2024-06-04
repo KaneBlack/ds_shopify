@@ -58,7 +58,7 @@
             "image": "shopify:\/\/shop_images\/testimg4.webp",
             "title": "peptides",
             "description": "<p>Diam maecenas ultricies mi eget mauris. Porttitor rhoncus dolor purus non. Enim sed faucibus turpis in eu mi bibendum.<\/p>",
-            "x_pos": 35,
+            "x_pos": 65,
             "y_pos": 67
           }
         },
@@ -68,8 +68,8 @@
             "image": "shopify:\/\/shop_images\/testimg5.webp",
             "title": "hialuronic acid",
             "description": "<p>Pellentesque dignissim enim sit amet. Sed nisi lacus sed viverra tellus in.<\/p>",
-            "x_pos": 35,
-            "y_pos": 67
+            "x_pos": 45,
+            "y_pos": 59
           }
         },
         "repeatable_WKdcbt": {
@@ -78,7 +78,7 @@
             "image": "shopify:\/\/shop_images\/testimg1.webp",
             "title": "Marula oil",
             "description": "<p>Feugiat in fermentum posuere urna nec tincidunt.<\/p>",
-            "x_pos": 35,
+            "x_pos": 46,
             "y_pos": 67
           }
         }
