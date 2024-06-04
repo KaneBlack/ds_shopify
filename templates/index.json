@@ -39,6 +39,63 @@
         "show_text_below": false
       }
     },
+    "slider_section_iWHztF": {
+      "type": "slider-section",
+      "blocks": {
+        "repeatable_hfxWNH": {
+          "type": "repeatable",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_69.jpg",
+            "title": "niacinamide",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et<\/p>",
+            "x_pos": 35,
+            "y_pos": 67
+          }
+        },
+        "repeatable_ep4ePz": {
+          "type": "repeatable",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/testimg4.webp",
+            "title": "peptides",
+            "description": "<p>Diam maecenas ultricies mi eget mauris. Porttitor rhoncus dolor purus non. Enim sed faucibus turpis in eu mi bibendum.<\/p>",
+            "x_pos": 35,
+            "y_pos": 67
+          }
+        },
+        "repeatable_WKdcbt": {
+          "type": "repeatable",
+          "settings": {
+            "title": "",
+            "description": "",
+            "x_pos": 35,
+            "y_pos": 67
+          }
+        },
+        "repeatable_438cwC": {
+          "type": "repeatable",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/testimg5.webp",
+            "title": "hialuronic acid",
+            "description": "<p>Pellentesque dignissim enim sit amet. Sed nisi lacus sed viverra tellus in.<\/p>",
+            "x_pos": 35,
+            "y_pos": 67
+          }
+        }
+      },
+      "block_order": [
+        "repeatable_hfxWNH",
+        "repeatable_ep4ePz",
+        "repeatable_WKdcbt",
+        "repeatable_438cwC"
+      ],
+      "settings": {
+        "heading": "no bullshit inside",
+        "img_pos": "0",
+        "heading_color": "",
+        "text_color": "",
+        "bg_color": ""
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -70,6 +127,7 @@
   },
   "order": [
     "image_banner",
+    "slider_section_iWHztF",
     "featured_collection"
   ]
 }
